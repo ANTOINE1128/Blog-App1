@@ -28,7 +28,7 @@ RSpec.describe Post, type: :model do
     subject.title = 'A' * 251
     expect(subject).to_not be_valid
   end
-  
+
   it 'text should have valid value' do
     expect(subject.text).to eql 'This is not my first post'
   end
