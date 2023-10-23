@@ -128,7 +128,6 @@ Please feel free to fork and reuse this repository for your projects.
 
 We welcome any improvements or new ideas. If your changes are good and align with the project's goals, we would be happy to incorporate them.
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
