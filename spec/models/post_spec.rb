@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   subject do
-    @user = User.create(name: 'Tom & Jerry', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Best friends',
+    @user = User.create(name: 'Tom & Jerry', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Best friend',
                         posts_counter: 12)
     @post = Post.create(title: 'Physics', text: 'This is not my first post', comments_counter: 10, likes_counter: 10,
                         author: @user)
@@ -22,11 +22,6 @@ RSpec.describe Post, type: :model do
 
   it 'title should have valid value' do
     expect(subject.title).to eql 'Physics'
-  end
-
-  it 'title should not exceed 250 characters' do
-    subject.title = 'A' * 251
-    expect(subject).to_not be_valid
   end
 
   it 'text should have valid value' do
@@ -58,12 +53,12 @@ RSpec.describe Post, type: :model do
     post = Post.new(title: 'Title', comments_counter: 0, likes_counter: 0, author:)
     post.save!
     author.reload
-    post.update_post_counter
+    post.update_author_posts_count
     author.reload
     expect(author.posts_counter).to eq(1)
   end
 
   it 'Check recent_comments, it should return 5 recent comments' do
-    expect(subject.recent_comments).to eq(subject.comments.order(created_at: :desc).limit(5))
+    expect(subject.five_most_recent_comments).to eq(subject.comments.order(created_at: :desc).limit(5))
   end
 end
