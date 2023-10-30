@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <h2>📖 APP-BLOG</h2>
+  <h2>📖 Blog-App</h2>
 </div>
 
 <!-- TABLE OF CONTENTS -->
