@@ -1,6 +1,6 @@
 .user-photo img {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
 }
 
 .user-row-link {
@@ -24,7 +24,7 @@
 }
 
 .user-info {
-  margin-left: 10px;
+  margin-left: 15px;
   height: 100px;
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
   border: 1px solid #ccc;
