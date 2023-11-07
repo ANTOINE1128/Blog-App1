@@ -11,7 +11,7 @@
   </div>
 <% end %>
 
-<% @user.posts.each do |post| %>
+<% @user.three_most_recent_posts.each do |post| %>
   <%= link_to user_post_path(@user, post), class: "post-link" do %>
     <div class="post-row">
       <h3><%= post.title %></h3>
@@ -35,4 +35,4 @@
 
 <%= link_to 'Create a new post', new_user_post_path(@user), class: 'see-all-posts-btn' %>
 
-<%= link_to 'Pagination', user_posts_path(@user), class: 'see-all-posts-btn' %>
+<%= link_to 'Pagination', user_posts_path(@user), class: 'pagination see-all-posts-btn' %>
