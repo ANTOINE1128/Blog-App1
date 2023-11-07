@@ -42,7 +42,23 @@ RSpec.feature 'User show page', type: :feature do
     expect(page).to have_link('See all posts')
   end
 
-#  add more test cases here 
+  scenario "When I click a user's post, it redirects me to that post's show page" do
+    visit user_path(@user)
+    first_post_title = @user.three_most_recent_posts.first.title
+    click_link(first_post_title)
+    expect(page).to have_content(first_post_title)
+  end
 
+  scenario "When I click to see all posts, it redirects me to the user's post's index page" do
+    visit user_path(@user)
+    click_link('See all posts')
+    expect(page.current_path).to eq(user_posts_path(@user))
+  end
 
+  scenario "I can see the user's first 3 posts" do
+    visit user_path(@user)
+    @user.three_most_recent_posts.each do |post|
+      expect(page).to have_content(post.title)
+    end
+  end
 end
