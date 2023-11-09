@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, skip: [:sessions]
+  as :user do
+    get 'login' => 'devise/sessions#new', as: :new_user_session
+    post 'login' => 'devise/sessions#create', as: :user_session
+    get 'logout' => 'devise/sessions#destroy', as: :destroy_user_session
+  end
+
   root 'users#index'
-  resources :users, only: [:index, :show] do
-    resources :posts, only: [:index, :show, :new, :create] do
-      resources :comments, only: [:create]
-      resources :likes, only: [:create]
+  resources :users, only: [:index, :show, :destroy] do
+    resources :posts, only: [:index, :show, :new, :create, :destroy] do
+      resources :comments, only: [:create, :destroy]
+      resources :likes, only: [:create, :destroy]
     end
   end
 end
