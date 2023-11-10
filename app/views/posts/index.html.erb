@@ -25,7 +25,11 @@
     <% end %>
   </div>
 <% end %>
-<%= link_to 'Create a new post', new_user_post_path(@user), class: 'see-all-posts-btn' %>
+
+<% if (current_user.id == @user.id) && (can? :create, Post) %>
+  <%= link_to 'Create a new post', new_user_post_path(@user), class: 'see-all-posts-btn' %>
+<% end %>
+
 <%= link_to 'Pagination', user_posts_path(@user), class: 'pagination see-all-posts-btn' %>
 <% flash.each do |key, message| %>
   <div class="<%= key %>"><%= message %></div>
