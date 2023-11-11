@@ -20,8 +20,6 @@ class PostsController < ApplicationController
 
     @current_like = if user_signed_in? # Check if the user is authenticated (for Devise)
                       @post.likes.find_by(author_id: current_user.id)
-                    else
-                      nil # Set @current_like to nil or handle it as appropriate for unauthenticated requests
                     end
   end
 
