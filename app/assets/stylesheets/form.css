@@ -21,7 +21,7 @@
 
 .custom-button {
   padding: 10px 20px;
-  background-color: #0fc55b;
+  background-color: #70c500;
   color: #fff;
   border: none;
   border-radius: 3px;
@@ -31,5 +31,5 @@
 }
 
 .custom-button:hover {
-  background-color: #0056b3;
+  background-color: #00b31e;
 }

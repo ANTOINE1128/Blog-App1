@@ -56,7 +56,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
-gem 'devise'
+
 gem 'rails-controller-testing'
 
 group :development do
@@ -71,3 +71,7 @@ group :development do
 end
 
 gem 'rubocop', '>= 1.0', '< 2.0'
+
+gem 'devise'
+
+gem 'cancancan'
