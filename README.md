@@ -81,7 +81,12 @@ to run the tests run the following command
 👤: **Antoine Makdessy**
 
 - GitHub: [@ANTOINE1128](https://github.com/ANTOINE1128)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/antoine-makdessy/)
+- LinkedIn: [LinkedIn](https://www.linkedi'n.com/in/antoine-makdessy/)
+
+👤 **Tanmayi Manku**
+
+- GitHub: [@tan12082001](https://github.com/tan12082001)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/tanmayi-manku-99195720a/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

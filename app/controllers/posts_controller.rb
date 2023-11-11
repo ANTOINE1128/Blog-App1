@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
+  before_action :set_post, only: [:show]
   before_action :authenticate_user!, only: %i[new create]
 
   def destroy
@@ -16,7 +17,10 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @user = User.find(@post.author_id)
     @comments = @post.comments
-    @current_like = @post.likes.find_by(author_id: current_user.id)
+
+    @current_like = if user_signed_in? # Check if the user is authenticated (for Devise)
+                      @post.likes.find_by(author_id: current_user.id)
+                    end
   end
 
   def new
@@ -38,5 +42,9 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :text)
+  end
+
+  def set_post
+    @post = Post.find(params[:id]) if params[:id] # Fetch @post if :id is present in the params
   end
 end
