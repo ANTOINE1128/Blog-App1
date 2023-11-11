@@ -1,6 +1,6 @@
 class Api::V1::CommentsController < ActionController::API
   def index
-    post = Post.where(author_id: params[:user_id])
+    post = Post.find(params[:post_id])
     render json: post.comments
   end
 
